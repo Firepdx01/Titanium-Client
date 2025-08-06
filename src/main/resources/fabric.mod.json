@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "titanium_client",
+  "version": "${version}",
+  "name": "Titanium Client",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/titanium_client/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.titanium.client.titanium_client.client.Titanium_clientDataGenerator"
+    ],
+    "client": [
+      "net.titanium.client.titanium_client.client.Titanium_clientClient"
+    ],
+    "main": [
+      "net.titanium.client.titanium_client.Titanium_client"
+    ]
+  },
+  "mixins": [
+    "titanium_client.mixins.json",
+    {
+      "config": "titanium_client.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
